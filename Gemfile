@@ -10,7 +10,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.6.1'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views'
-gem 'stock_quote'
+gem 'iex-ruby-client'
 gem 'font-awesome-rails'
 
 # Use Puma as the app server
