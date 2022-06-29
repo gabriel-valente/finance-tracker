@@ -31,9 +31,22 @@
             <a class="nav-link disabled">Disabled</a>
           </li>
         </ul>
-        <form class="my-2 my-lg-0">
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-outline-success my-2 my-sm-0" %>
-        </form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-expanded="false">
+              <%= fa_icon "user" %> <%= current_user.full_name %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+                <%=fa_icon "edit" %> Edit Profile
+              <% end %>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item text-danger" %>
+            </div>
+          </li>
+        </ul>
       </div>
     <% end %>
   </div>
