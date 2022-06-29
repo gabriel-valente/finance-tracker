@@ -7,7 +7,7 @@ ruby '2.6.9'
 gem 'rails', '~> 5.2.5'
 
 gem 'devise'
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap', '~> 4.6.1'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views'
 gem 'stock_quote'
