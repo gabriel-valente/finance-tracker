@@ -19,4 +19,12 @@ class StocksController < ApplicationController
       end
     end
   end
+
+  def refresh
+    current_user.stocks.each do |stock|
+      stock.update!(last_price: Stock.get_price(stock.ticker))
+    end
+
+    redirect_back(fallback_location: portfolio_path)
+  end
 end

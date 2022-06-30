@@ -1,0 +1,21 @@
+<h2>User Details</h2>
+
+<div class="card-card-header results-block">
+  <table class="col-md-12">
+    <tbody>
+      <tr>
+        <td><strong>Name: </strong><%= @user.full_name %></td>
+        <td><strong>Email: </strong><%= @user.email %></td>
+        <td>
+          <% if current_user.not_friends_with?(@user.id) %>
+            <%= link_to "Follow Friend", friendships_path(friend: @user.id), method: :post, class: "btn btn-success ml-auto" %>
+          <% else %>
+            <%= link_to "Unfollow Friend", friendship_path(@user), method: :delete, class: "btn btn-warning ml-auto" %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<%= render "stocks/list" %>

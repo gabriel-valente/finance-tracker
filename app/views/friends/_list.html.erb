@@ -15,7 +15,7 @@
             <th scope="row"><%= friend.full_name %></th>
             <td><%= friend.email %></td>
             <td>
-              <%= link_to "View Profile", "#", class: "btn btn-success" %>
+              <%= link_to "View Profile", profile_path(id: friend), class: "btn btn-success" %>
               <%= link_to "Unfollow Friend", friendship_path(friend), method: :delete, class: "btn btn-warning" %>
             </td>
           </tr>
